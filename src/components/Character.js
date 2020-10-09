@@ -1,35 +1,56 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components'
 
-const StyledDiv = styled.div`
-    width: 90%;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #BD4E1E;
-    padding: 4%;
-    margin-bottom: 20%;
-`
+
+const StyledCharacterCard = styled.div`
+    background: #BA4919;
+    width: 25%;
+    padding: 1%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    `
 
 const StyledHeader = styled.h1`
-    color: #120703;
+    &:hover{
+        cursor: pointer;
+    }
 `
 
-const StyledPara = styled.p`
-    color: #120703;
-`
 
 const Character = props => {
-    const { name, birth, homeworld } = props;
+
+    const { 
+        name, 
+        height,
+        mass,
+        hairColor,
+        skinColor,
+        eyeColor,
+        birth,
+        gender, 
+    } = props;
+
+    const [fullCard, setFullCard] = useState(true)
+
+    if (fullCard) {
+        return (
+            <StyledCharacterCard>
+                <StyledHeader onClick = {event => {setFullCard(false)}}>{name}</StyledHeader>
+            </StyledCharacterCard>
+        )
+    }
 
     return (
-        <StyledDiv>
-            <StyledHeader>{name}</StyledHeader>
-            <StyledPara>Birth Year: {birth}</StyledPara>
-            <StyledPara>Place Of Birth: {homeworld}</StyledPara>
-        </StyledDiv>
+        <StyledCharacterCard>
+            <StyledHeader onClick = {event => {setFullCard(true)}}>{name}</StyledHeader>
+            <p>Height: {height} cm</p>
+            <p>Mass: {mass} kg</p>
+            <p>Hair Color: {hairColor}</p>
+            <p>Skin Color: {skinColor}</p>
+            <p>Eye Color: {eyeColor}</p>
+            <p>Birth Year: {birth}</p>
+            <p>Gender: {gender}</p>
+        </StyledCharacterCard>
     )
 }
 

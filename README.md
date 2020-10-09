@@ -42,6 +42,8 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
 
+    Side effects are things that affect something outside of the scope of the current function that is being executed.
+
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
