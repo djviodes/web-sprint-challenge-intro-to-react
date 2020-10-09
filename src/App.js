@@ -41,17 +41,18 @@ const App = () => {
         {
           character.map((character, index) => {
             return (
-            <Character
-              key={index}
-              name={character.name} 
-              height={character.height}
-              mass={character.mass}
-              hairColor={character.hair_color}
-              skinColor={character.skin_color}
-              eyeColor={character.eye_color}
-              birth={character.birth_year}
-              gender={character.gender}
-            />)
+              <Character
+                key={index}
+                name={character.name} 
+                height={character.height}
+                mass={character.mass}
+                hairColor={character.hair_color}
+                skinColor={character.skin_color}
+                eyeColor={character.eye_color}
+                birth={character.birth_year}
+                gender={character.gender}
+              />
+            )
           })
         }
       </StyledCardLayout>

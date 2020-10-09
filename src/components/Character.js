@@ -30,19 +30,19 @@ const Character = props => {
         gender, 
     } = props;
 
-    const [fullCard, setFullCard] = useState(true)
+    const [headerCard, setHeaderCard] = useState(true)
 
-    if (fullCard) {
+    if (headerCard) {
         return (
             <StyledCharacterCard>
-                <StyledHeader onClick = {event => {setFullCard(false)}}>{name}</StyledHeader>
+                <StyledHeader onClick = {event => {setHeaderCard(false)}}>{name}</StyledHeader>
             </StyledCharacterCard>
         )
     }
 
     return (
         <StyledCharacterCard>
-            <StyledHeader onClick = {event => {setFullCard(true)}}>{name}</StyledHeader>
+            <StyledHeader onClick = {event => {setHeaderCard(true)}}>{name}</StyledHeader>
             <p>Height: {height} cm</p>
             <p>Mass: {mass} kg</p>
             <p>Hair Color: {hairColor}</p>
